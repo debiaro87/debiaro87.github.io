@@ -16,6 +16,8 @@ for attempt in range(1,4):
             print("2.Deposit")
             print("3.Withdraw")
             print("4.Exit")
+            print("5.Fast Cash")
+            print("6.change password")
             choice=int(input("Enter your choice:"))
             if choice==1:
                 print("Your current balance",balance)
@@ -40,8 +42,55 @@ for attempt in range(1,4):
             elif choice==4:
                 print('''thank you for your using our Bank ATM Machine have a nice time !''')
                 break
+            elif choice==5:
+                print("1.100")
+                print("2.200")
+                print("3.599")
+                print("4.1000")
+                choice=int(input("enter your choice:"))
+                if choice==1:
+                    if balance>=100:
+                        balance=balance-100
+                        print("withdrawn successfully !")
+                        print("your current balance is:",balance)
+                    else:
+                        print("insufficient balance")
+                elif choice==2:
+                    if balance>=200:
+                        balance=balance-200
+                        print("withdrawn successfully !")
+                        print("your current balance is:",balance)
+                    else:
+                        print("insufficient balance")
+                elif choice==3:
+                    if balance>=500:
+                        balance=balance-500
+                        print("withdrawn successfully !")
+                        print("your current balance is:",balance)
+                    else:
+                        print("insufficient balance")
+                else:
+                    if balance>=1000:
+                        balance=balance-1000
+                        print("withdrawn successfully !")
+                        print("your current balance is:",balance) 
+                    else:
+                        print("insufficient balance")
+            elif choice==6:
+                old_password=int(input("enter your old password:"))
+                if old_password==user_password:
+                    new_password=int(input("enter new password:"))
+                    confirm_password=int(input("confirm your new password:"))
+                    if new_password==confirm_password:
+                        user_password=new_password
+                        print("your password has been changed successfully !")
+                    else:
+                        print("password doesn't match")
+                if old_password!=user_password:
+                    print("incorrect password")
             else:
-                print("please enter correct choice between 1-4")
+                print("please enter correct choice between 1-5")
+
     else:
         print("in correct password")
         remaining=3-attempt
